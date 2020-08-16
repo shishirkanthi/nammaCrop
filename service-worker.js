@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/nammaCrop/precache-manifest.2456133bf5bedd57b59ebc831511d680.js"
+  "/nammaCrop/precache-manifest.9d20c2aa60f8eeae62beaab379db4f99.js"
 );
 
 self.addEventListener('message', (event) => {
