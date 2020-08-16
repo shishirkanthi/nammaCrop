@@ -115,11 +115,9 @@ class App extends Component{
 
 
     performSearch = (crop) =>{
-        console.log(`*********${JSON.stringify(crop)}`)
         this.setState({
-            results: dataBase.filter(item=>{return item.crop==crop})
-        })
-        console.log(JSON.stringify(this.state.results))
+            results: dataBase.filter(item=>{return item.crop.toLowerCase()==crop.toLowerCase()})
+        })        
     }
 
     render(){        
