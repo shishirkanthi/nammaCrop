@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/nammaCrop/static/css/main.5e89be43.chunk.css",
-    "main.js": "/nammaCrop/static/js/main.15809a4f.chunk.js",
-    "main.js.map": "/nammaCrop/static/js/main.15809a4f.chunk.js.map",
+    "main.js": "/nammaCrop/static/js/main.dfcc9642.chunk.js",
+    "main.js.map": "/nammaCrop/static/js/main.dfcc9642.chunk.js.map",
     "runtime-main.js": "/nammaCrop/static/js/runtime-main.ee9d46bd.js",
     "runtime-main.js.map": "/nammaCrop/static/js/runtime-main.ee9d46bd.js.map",
-    "static/js/2.8f8d2c7c.chunk.js": "/nammaCrop/static/js/2.8f8d2c7c.chunk.js",
-    "static/js/2.8f8d2c7c.chunk.js.map": "/nammaCrop/static/js/2.8f8d2c7c.chunk.js.map",
+    "static/js/2.7c99678c.chunk.js": "/nammaCrop/static/js/2.7c99678c.chunk.js",
+    "static/js/2.7c99678c.chunk.js.map": "/nammaCrop/static/js/2.7c99678c.chunk.js.map",
     "index.html": "/nammaCrop/index.html",
-    "precache-manifest.9d20c2aa60f8eeae62beaab379db4f99.js": "/nammaCrop/precache-manifest.9d20c2aa60f8eeae62beaab379db4f99.js",
+    "precache-manifest.26bb697e3512fcdf0c76436698b79ca5.js": "/nammaCrop/precache-manifest.26bb697e3512fcdf0c76436698b79ca5.js",
     "service-worker.js": "/nammaCrop/service-worker.js",
     "static/css/main.5e89be43.chunk.css.map": "/nammaCrop/static/css/main.5e89be43.chunk.css.map",
-    "static/js/2.8f8d2c7c.chunk.js.LICENSE.txt": "/nammaCrop/static/js/2.8f8d2c7c.chunk.js.LICENSE.txt"
+    "static/js/2.7c99678c.chunk.js.LICENSE.txt": "/nammaCrop/static/js/2.7c99678c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.ee9d46bd.js",
-    "static/js/2.8f8d2c7c.chunk.js",
+    "static/js/2.7c99678c.chunk.js",
     "static/css/main.5e89be43.chunk.css",
-    "static/js/main.15809a4f.chunk.js"
+    "static/js/main.dfcc9642.chunk.js"
   ]
 }
