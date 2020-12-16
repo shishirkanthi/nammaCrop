@@ -1,9 +1,9 @@
 import React,{Component} from 'react'
-import ReactDom from 'react-dom'
-import Button, { Container, Row, Col, Form } from 'react-bootstrap'
+import { Container, Row } from 'react-bootstrap'
+import Autocomplete from '@material-ui/lab/Autocomplete';
+import TextField from '@material-ui/core/TextField';
 
 class Search extends Component{
-
     state ={
         crop:''
     }
@@ -16,25 +16,22 @@ class Search extends Component{
     }
     
     render(){
-        const crop = this.state.crop
-        console.log(`INIT: ${crop}`)
-        const {performSearch} = this.props
+        const crop = this.state.crop;
+        const {performSearch, data} = this.props;
+        
         return(
             <div>
                 <Container>
                     <Row>
-                        <label class="field">Crop</label>
-                        <input 
-                            type = "text"
-                            name = "crop"
-                            id = "crop"
-                            value = {crop}
-                            onChange = {this.handleChange}/>                            
-                        <button onClick={()=>performSearch(crop)}>Search</button>
-                    </Row>
-                    <Row>
-                        
-                    </Row>                
+                        <Autocomplete
+                            id="combo-box-demo"
+                            onChange={(event, newValue)=>this.props.onSelect(event, newValue)}
+                            options={data}
+                            getOptionLabel={(option) => option}
+                            style={{ width: '96vw' }}
+                            renderInput={(params) => <TextField {...params} label="Crop" variant="outlined" />}
+                        />
+                    </Row>                    
                 </Container>
             </div>
         )
