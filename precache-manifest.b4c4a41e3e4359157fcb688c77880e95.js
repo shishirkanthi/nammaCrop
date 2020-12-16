@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "96e68ea056ed82d0fc1c6646748760ba",
+    "revision": "32571d90398eb5158f8fbffe0e8ea869",
     "url": "/nammaCrop/index.html"
   },
   {
-    "revision": "a157fff77ae35e6ad1c5",
+    "revision": "15ad798752093973773b",
     "url": "/nammaCrop/static/css/main.5e89be43.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/nammaCrop/static/js/2.7c99678c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a157fff77ae35e6ad1c5",
-    "url": "/nammaCrop/static/js/main.dfcc9642.chunk.js"
+    "revision": "15ad798752093973773b",
+    "url": "/nammaCrop/static/js/main.6a27d899.chunk.js"
   },
   {
     "revision": "aff0703b6f1576297029",
