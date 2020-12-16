@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import Search from './Search'
 import Results from './results'
 import cropdb from './data/cropdb.json'
+
 const metaData = {
     appName:'Pestopedia'
 }
@@ -40,7 +41,7 @@ class App extends Component{
     render(){        
         return(
             <div>
-                <h1 className="center pageheading">{metaData.appName}</h1>
+                <h1 className="center pageheading" style={{background:'#00ff84'}}>{metaData.appName}</h1>
                 <div className="text-center">
                     <Search  data={[...new Set(dataBase.map(item=>item.Crop))]} onSelect={this.updatedSelectedCrop} handleChange={this.handleChange} performSearch={this.performSearch}/>
                     <Results data={this.state}/>
