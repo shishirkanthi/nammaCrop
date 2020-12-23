@@ -23,9 +23,10 @@ export default function TabContent(props){
                 onChange ={(event, newValue)=>nameSelected(event, newValue)}
                 options={uniqueItemLabels.sort()}
                 getOptionLabel={(uniqueItemLabels) => uniqueItemLabels}                    
-                defaultValue={props.selectedValue}
+                inputValue={props.selectedValue}
+                defaultValue = {props.selectedValue}
                 style={{ width: '96vw', marginTop:'5%', textTransform: 'capitalize' }}                
-                renderInput={(params) => { return (<TextField {...params} inputProps={{...params.inputProps}} label={props.type} variant="outlined"/>)}}
+                renderInput={(params) => { return (<TextField {...params} label={props.type} variant="outlined"/>)}}
             />                
             <TabResultGrid data={items} selectedName={props.selectedValue} issueType={props.type}/>
         </div>
