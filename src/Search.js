@@ -26,7 +26,7 @@ class Search extends Component{
                         <Autocomplete
                             id="combo-box-demo"
                             onChange={(event, newValue)=>this.props.onSelect(event, newValue)}
-                            options={data}
+                            options={data.sort()}
                             getOptionLabel={(option) => option}
                             style={{ width: '96vw' }}
                             renderInput={(params) => <TextField {...params} label="Crop" variant="outlined" />}

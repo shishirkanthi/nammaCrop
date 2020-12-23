@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import React,{Component, useState, useEffect} from 'react';
 // import SwipeableViews from 'react-swipeable-views';
 import ReactDom from 'react-dom';
 import PropTypes from 'prop-types';
@@ -50,18 +50,42 @@ function TabPanel(props) {
       marginTop:'5%'
     },
   }));
-  
-  export default function Results(props) {
+
+  export default function Results({...props}) {
     const classes = useStyles();
     const theme = useTheme();
+    const [selectedPestName, setSelectedPestName] = useState('');
+    const [selectedDiseaseName, setSelectedDiseaseName] = useState('');
+    const [selectedWeedName, setSelectedWeedName] = useState('');
     const [value, setValue] = React.useState(0);
-  
+
+    useEffect(()=>{
+      resetState();
+    },[props.data]);
+
+    console.log('post use Effect: ', props);
+
+    const setSelectedIssueName = (val, issueType) => {
+      console.log('results.js> setSelectedIssueName: ', val, 'type: ', issueType);
+      switch(issueType){
+        case 'pest': setSelectedPestName(val);
+          break;
+        case 'disease': setSelectedDiseaseName(val);
+          break;
+        case 'weed': setSelectedWeedName(val);
+          break;
+        default: console.log('results.js > setSelectedIssueName:: ', 'Error in issue name selection');
+      }      
+    }
+
+    const resetState = () => {
+      setSelectedPestName('');
+      setSelectedDiseaseName('');
+      setSelectedWeedName('');      
+    }
+    
     const handleChange = (event, newValue) => {
       setValue(newValue);
-    };
-  
-    const handleChangeIndex = (index) => {
-      setValue(index);
     };
   
     return (
@@ -84,13 +108,13 @@ function TabPanel(props) {
           onChangeIndex={handleChangeIndex}
         > */}
           <TabPanel value={value} index={0} dir={theme.direction}>
-            <TabContent data={props.data} type='pest'/>
+            <TabContent data={props.data} type='pest' selectedValue={selectedPestName} onSelect={setSelectedIssueName}/>
           </TabPanel>
           <TabPanel value={value} index={1} dir={theme.direction}>
-            {/* <List data={props.data} type='disease'/> */}
+            <TabContent data={props.data} type='disease' selectedValue={selectedDiseaseName} onSelect={setSelectedIssueName}/>
           </TabPanel>
           <TabPanel value={value} index={2} dir={theme.direction}>
-            {/* <List data={props.data} type='weed'/> */}
+            <TabContent data={props.data} type='weed' selectedValue={selectedWeedName} onSelect={setSelectedIssueName}/>
           </TabPanel>
         {/* </SwipeableViews> */}
       </div>

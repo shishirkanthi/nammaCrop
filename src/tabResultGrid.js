@@ -19,10 +19,10 @@ const styles = {
 function tabResultGrid(props){
     const {classes} = props;
     let issueTypeColHeader;
-    switch(props.data[0].IssueType)
+    switch(props.issueType)
     {
         case 'pest': issueTypeColHeader = 'Pesticide';break;
-        case 'disease': issueTypeColHeader = 'Medicine';break;
+        case 'disease': issueTypeColHeader = 'Fungicide/Bactericide';break;
         case 'weed': issueTypeColHeader = 'Weedicide';break;
         default: issueTypeColHeader = 'Invalid data';break;
     }

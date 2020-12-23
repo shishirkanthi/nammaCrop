@@ -1,4 +1,4 @@
-import React,{Component} from 'react'
+import React,{Component, useState, useEffect} from 'react'
 import Search from './Search'
 import Results from './results'
 import cropdb from './data/cropdb.json'
@@ -9,47 +9,36 @@ const metaData = {
 
 const dataBase = cropdb.Insecticides;
 
-class App extends Component{
-    state = {
-        selectedCrop:'',
-        results:[]
-    }
+const App = () => {
+    const [selectedCrop, setSelectedCrop] = useState('');
+    const [results, setResults] = useState([]);
 
-
-    performSearch = (selectedCrop) =>{
-        console.log('Searching');
-        if(selectedCrop){
-            this.setState({
-                results: dataBase.filter(item=>{return item.Crop.toLowerCase()==selectedCrop.toLowerCase()})
-            });
-        }
-    }
-
-    updatedSelectedCrop = (event, selectedCrop) =>{
+    const updatedSelectedCrop = (event, selectedCrop) =>{
         console.log('Selected crop:', selectedCrop);
         if(selectedCrop !== null){
-            this.setState({
-                results: dataBase.filter(item=>{return item.Crop.toLowerCase()==selectedCrop.toLowerCase()})
-            });
+            setResults(dataBase.filter(item=>{return item.Crop.toLowerCase()==selectedCrop.toLowerCase()}));
         } else{
-            this.setState({
-                results: []
-            });
+            setResults([]);
         }
     }
 
-    render(){        
-        return(
-            <div>
-                <h1 className="center pageheading" style={{background:'#00ff84'}}>{metaData.appName}</h1>
-                <div className="text-center">
-                    <Search  data={[...new Set(dataBase.map(item=>item.Crop))]} onSelect={this.updatedSelectedCrop} handleChange={this.handleChange} performSearch={this.performSearch}/>
-                    <Results data={this.state}/>
-                </div>
-                
-            </div>
-        )
+    const performSearch = (selectedCrop) =>{
+        console.log('Searching');
+        if(selectedCrop){
+            setResults(dataBase.filter(item=>{return item.Crop.toLowerCase()==selectedCrop.toLowerCase()}));
+        }
     }
+    
+    return(
+        <div>
+            <h1 className="center pageheading" style={{background:'#00ff84'}}>{metaData.appName}</h1>
+            <div className="text-center">
+                <Search  data={[...new Set(dataBase.map(item=>item.Crop))]} onSelect={updatedSelectedCrop} performSearch={performSearch}/>
+                <Results data={results}/>
+            </div>
+            
+        </div>
+    )
 }
 
 export default App
